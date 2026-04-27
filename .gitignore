@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 虚拟环境
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 环境变量和敏感配置
+.env
+.env.local
+*.key
+
+# 日志
+*.log
+
+# 临时文件
+tmp/
+temp/
+
+# === AIBLI 项目特有 ===
+
+# 音频合成引擎（外部依赖，体积巨大，不需要上传）
+audio_synthesis/engine/
+
+# 角色模型权重、音频样本、头像（体积大或可重新生成）
+audio_synthesis/character_profile/*.ckpt
+audio_synthesis/character_profile/*.pth
+audio_synthesis/character_profile/*.wav
+audio_synthesis/character_profile/*.mp3
+
+# 角色头像图片
+video_stitcher/characters/*/profile/avatar/
+
+# 生成的输出文件（音频、视频等产物）
+audio_synthesis/project_output/
+video_stitcher/output/
+pipeline/output/
+
+# 压缩包和大型二进制
+*.zip
+*.exe
+*.dll
+*.so
