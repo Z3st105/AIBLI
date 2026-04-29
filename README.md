@@ -1,98 +1,138 @@
-# AIBLI
+# 🎬 AIBLI
 
-基于 GPT-SoVITS 与 MoviePy 的虚拟角色音视频合成管线。
+> 虚拟角色音视频合成管线 — 从剧本到带字幕短视频的一站式自动化工具
 
-## 项目简介
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://python.org)
+[![GPT-SoVITS](https://img.shields.io/badge/GPT--SoVITS-v2-FF6B6B)](https://github.com/RVC-Boss/GPT-SoVITS)
+[![MoviePy](https://img.shields.io/badge/MoviePy-2.x-00C49A)](https://github.com/Zulko/moviepy)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-AIBLI 是一套将虚拟角色对话合成为带字幕短视频的自动化工具，包含两个核心模块：
+---
 
-- **audio_synthesis** — 基于 GPT-SoVITS 的语音合成管线，负责将剧本文本转换为多角色对话音频
-- **video_stitcher** — 基于 MoviePy 2.x 的视频合成工具，将角色立绘、音频与字幕合成为竖屏短视频（1080x1920）
+## ✨ 功能特性
 
-## 目录结构
+| 模块 | 能力 |
+|------|------|
+| 🎙️ **语音合成** | 基于 GPT-SoVITS，多角色对话音频一键生成 |
+| 🎞️ **视频合成** | 基于 MoviePy 2.x，角色立绘 + 字幕 + 音频自动合成 |
+| 📱 **竖屏输出** | 9:16 格式（1080×1920），适配短视频平台 |
+| 🎨 **角色定制** | 支持多角色人设、声线、字幕样式独立配置 |
+| 🔗 **桥接协作** | 音频团队与视频团队通过统一 timeline.json 协作 |
+
+---
+
+## 🏗️ 项目架构
 
 ```
 AIBLI/
-├── audio_synthesis/          # 语音合成管线
+├── 🎙️ audio_synthesis/          # 语音合成管线
 │   ├── audio_synthesis_pipeline.py  # 主入口
-│   ├── character_profile/    # 角色配置（人设文本、参考音频等，不上传）
-│   ├── engine/               # GPT-SoVITS 引擎（外部依赖，不上传）
-│   ├── project_output/       # 生成音频输出（不上传）
+│   ├── character_profile/    # 角色配置（人设、参考音频）
 │   ├── scripts/              # 剧本文件
 │   └── README.md             # 音频模块说明
-├── pipeline/                 # 桥接文件/中间产物
-├── video_stitcher/           # 视频合成工具
+│
+├── 🎞️ video_stitcher/           # 视频合成工具
 │   ├── src/                  # 核心源码
 │   │   ├── main.py           # 主程序
-│   │   ├── core/             # 视频/字幕/音频混合核心
+│   │   ├── core/             # 视频/字幕/音频混合
 │   │   └── utils/            # 工具函数
-│   ├── characters/           # 角色配置（字幕样式等）
-│   ├── output/               # 生成视频输出（不上传）
+│   ├── characters/           # 角色字幕样式配置
 │   ├── docs/                 # 文档
 │   ├── requirements.txt      # Python 依赖
 │   └── README.md             # 视频模块说明
-└── README.md                 # 本文件
+│
+└── 🔗 pipeline/                 # 桥接文件/中间产物
 ```
 
-## 依赖说明
+---
 
-本项目依赖以下外部工具，**无需上传至本仓库**，请按官方文档自行安装：
+## 🚀 快速开始
 
-| 依赖 | 用途 | 官方仓库 |
+### 1. 环境准备
+
+| 依赖 | 用途 | 安装方式 |
 |------|------|---------|
-| **GPT-SoVITS** | 语音合成引擎 | [RVC-Boss/GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS) |
-| **MoviePy 2.x** | 视频合成 | [Zulko/moviepy](https://github.com/Zulko/moviepy) |
+| **GPT-SoVITS** | 语音合成引擎 | [官方仓库](https://github.com/RVC-Boss/GPT-SoVITS) |
+| **MoviePy 2.x** | 视频合成 | `pip install moviepy` |
 | **Python 3.9+** | 运行时 | — |
 
-### audio_synthesis 模块
-
-将 `GPT-SoVITS` 引擎放置于 `audio_synthesis/engine/` 目录下，确保目录结构如下：
-
-```
-audio_synthesis/engine/
-├── GPT_SoVITS/          # GPT-SoVITS 源码
-├── runtime/             # Python 运行环境（可选，也可使用系统 Python）
-├── tools/               # 辅助工具
-└── ...
-```
-
-角色配置文件放置于 `audio_synthesis/character_profile/{角色名}/` 目录下，包含：
-- `personality.txt` — 角色人设描述
-- `ref_audio/sample.wav` — 参考音频样本
-- `{角色名}.ckpt` / `{角色名}.pth` — 训练好的角色模型权重
-
-### video_stitcher 模块
+### 2. 安装项目依赖
 
 ```bash
 cd video_stitcher
 pip install -r requirements.txt
-python src/main.py
 ```
 
-角色配置放置于 `video_stitcher/characters/{角色名}/profile/` 目录下，包含：
-- `subtitle_style.json` — 字幕样式配置
-- `avatar/photo.png` — 角色立绘（封面用）
+### 3. 配置角色
 
-## 工作流程
+在对应目录放置角色素材：
 
-1. **准备剧本** — 在 `audio_synthesis/scripts/` 下编写对话剧本
-2. **语音合成** — 运行 `audio_synthesis` 管线，生成各角色音频
-3. **时间线生成** — 音频管线输出 `timeline.json` 与合并后的音频
-4. **视频合成** — `video_stitcher` 读取时间线，合成带字幕的竖屏视频
+```
+audio_synthesis/character_profile/{角色名}/
+├── personality.txt      # 角色人设描述
+├── ref_audio/sample.wav # 参考音频样本
+├── {角色名}.ckpt        # GPT 模型权重
+└── {角色名}.pth         # SoVITS 模型权重
 
-## 协作模式
+video_stitcher/characters/{角色名}/profile/
+├── subtitle_style.json  # 字幕样式配置
+└── avatar/photo.png     # 角色立绘（封面用）
+```
 
-本项目与音频合成团队采用**桥接模式**集成：
-- 音频团队负责 `audio_synthesis` 模块的输出
-- 视频团队负责读取 `timeline.json` 并驱动 `video_stitcher`
-- 双方通过统一的 `timeline.json` 格式进行数据交换
+### 4. 运行工作流
 
-## 注意事项
+```bash
+# 1. 准备剧本 → audio_synthesis/scripts/
 
-- 本项目仓库**仅包含源码与配置模板**，不含模型权重、运行时环境与生成产物
-- 角色素材（头像、模型、参考音频）请按项目目录结构自行准备
-- 视频输出为竖屏 9:16 格式（1080x1920），采用封面缩放模式以最小化黑边
+# 2. 语音合成
+python audio_synthesis/audio_synthesis_pipeline.py
 
-## License
+# 3. 视频合成
+python video_stitcher/src/main.py
+```
 
-MIT
+---
+
+## 📋 工作流程
+
+```mermaid
+graph LR
+    A[📄 剧本] --> B[🎙️ 语音合成]
+    B --> C[📝 timeline.json]
+    C --> D[🎞️ 视频合成]
+    D --> E[📱 竖屏短视频]
+```
+
+1. **编写剧本** — 在 `audio_synthesis/scripts/` 下创建对话剧本
+2. **生成音频** — 运行语音合成管线，输出各角色音频
+3. **时间线生成** — 自动输出 `timeline.json` 与合并音频
+4. **合成视频** — `video_stitcher` 读取时间线，生成带字幕竖屏视频
+
+---
+
+## 🛠️ 技术栈
+
+- **语音合成**: GPT-SoVITS (v2)
+- **视频合成**: MoviePy 2.x
+- **字幕渲染**: 自定义字幕样式系统
+- **音频混合**: 桥接模式音频处理
+- **输出格式**: MP4 (H.264), 1080×1920, 9:16
+
+---
+
+## 📂 仓库内容
+
+本仓库包含：
+- ✅ 语音合成与视频合成的核心源码
+- ✅ 角色配置模板与人设文本
+- ✅ 字幕样式配置系统
+- ✅ 剧本格式规范与示例
+- ✅ 项目文档与使用说明
+
+运行时所需的模型权重、参考音频、角色立绘等素材请按上述目录结构自行准备。
+
+---
+
+## 📄 License
+
+[MIT](LICENSE)
