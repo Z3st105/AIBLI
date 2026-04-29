@@ -7,6 +7,10 @@
 [![MoviePy](https://img.shields.io/badge/MoviePy-2.x-00C49A)](https://github.com/Zulko/moviepy)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
+<img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> **Hi there!** 欢迎使用 AIBLI —— 让虚拟角色开口说话的自动化工具。
+
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=18&color=00C49A&center=false&pause=1000&lines=剧本+→+语音+→+视频，一站式合成;支持多角色对话与独立字幕样式;输出竖屏短视频，适配各大平台)
+
 ---
 
 ## ✨ 功能特性
@@ -130,6 +134,23 @@ graph LR
 - ✅ 项目文档与使用说明
 
 运行时所需的模型权重、参考音频、角色立绘等素材请按上述目录结构自行准备。
+
+---
+
+## 🎮 作者其他项目
+
+<details>
+<summary>👇 点击展开查看更多</summary>
+
+| 项目 | 类型 | 状态 |
+|------|------|------|
+| 🍺 **魔物酒馆模拟RPG** | Godot 游戏 | 开发中 |
+| 🎰 **刮刮乐彩票游戏** | Godot 原型 | 已完成 |
+| 🎬 **AIBLI** | AI 音视频工具 | 已完成 |
+
+> 游戏开发者 · AI 创作者 · 独立工作室
+
+</details>
 
 ---
 
