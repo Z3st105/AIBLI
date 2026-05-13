@@ -40,8 +40,44 @@ temp/
 
 # === AIBLI 项目特有 ===
 
-# 音频合成引擎（外部依赖，体积巨大，不需要上传）
-audio_synthesis/engine/
+# 音频合成引擎 - GPT-SoVITS 原始代码（外部依赖，体积巨大）
+audio_synthesis/engine/GPT_SoVITS/
+audio_synthesis/engine/GPT_weights*/
+audio_synthesis/engine/SoVITS_weights*/
+audio_synthesis/engine/runtime/
+audio_synthesis/engine/tools/
+audio_synthesis/engine/TEMP/
+audio_synthesis/engine/__pycache__/
+audio_synthesis/engine/*.bat
+audio_synthesis/engine/*.ps1
+audio_synthesis/engine/*.sh
+audio_synthesis/engine/*.txt
+audio_synthesis/engine/*.md
+audio_synthesis/engine/*.json
+audio_synthesis/engine/*.ipynb
+audio_synthesis/engine/*.log
+# GPT-SoVITS 原始 Python 文件（只提交多引擎适配器）
+audio_synthesis/engine/api.py
+audio_synthesis/engine/api_v2.py
+audio_synthesis/engine/auto_train_gui.py
+audio_synthesis/engine/auto_train_step1.py
+audio_synthesis/engine/auto_train_step1_error.log
+audio_synthesis/engine/batch_inference.py
+audio_synthesis/engine/config.py
+audio_synthesis/engine/webui.py
+audio_synthesis/engine/weight.json
+audio_synthesis/engine/LICENSE
+audio_synthesis/engine/README.md
+audio_synthesis/engine/extra-req.txt
+audio_synthesis/engine/requirements.txt
+audio_synthesis/engine/install.ps1
+audio_synthesis/engine/install.sh
+audio_synthesis/engine/go-webui.bat
+audio_synthesis/engine/go-webui.ps1
+audio_synthesis/engine/run_gui.bat
+audio_synthesis/engine/run_step1.bat
+audio_synthesis/engine/scheduler.py
+audio_synthesis/engine/生成的音频/
 
 # 角色模型权重、音频样本、头像（体积大或可重新生成）
 audio_synthesis/character_profile/*.ckpt
