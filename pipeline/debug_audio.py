@@ -4,10 +4,10 @@
 import subprocess, sys, os
 
 cmd = [
-    r"D:\AI音库\GPT-SoVITS-v2pro-20250604\runtime\python.exe",
-    r"D:\AIBLI\audio_synthesis\audio_synthesis_pipeline.py",
+    os.environ.get("GPT_SOVITS_PYTHON", r"D:\AI音库\GPT-SoVITS-v2pro-20250604\runtime\python.exe"),
+    os.path.join(os.path.dirname(__file__), "..", "audio_synthesis", "audio_synthesis_pipeline.py"),
     "--project", "P002",
-    "--script", r"D:\AIBLI\pipeline\projects\P002\script.txt",
+    "--script", os.path.join(os.path.dirname(__file__), "projects", "P002", "script.txt"),
 ]
 
 print("执行命令:")

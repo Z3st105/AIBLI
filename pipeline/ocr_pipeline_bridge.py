@@ -37,14 +37,15 @@ from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 
 # ============================================================
-# 路径配置
+# 路径配置（可通过环境变量覆盖）
 # ============================================================
-SOURCE_DIR = Path(r"E:\搞怪\待处理")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+SOURCE_DIR = Path(os.environ.get("OCR_SOURCE_DIR", r"E:\搞怪\待处理"))
 PROCESSED_DIR = SOURCE_DIR / "已处理"
-OUTPUT_BASE = Path(r"E:\搞怪")
-PIPELINE_QUEUE = Path(r"D:\AIBLI\pipeline\queue\pending")
-LOG_DIR = Path(r"D:\AIBLI\pipeline\logs")
-CONFIG_PATH = Path(r"D:\AIBLI\pipeline\pipeline_config.json")
+OUTPUT_BASE = Path(os.environ.get("OCR_OUTPUT_BASE", r"E:\搞怪"))
+PIPELINE_QUEUE = PROJECT_ROOT / "pipeline" / "queue" / "pending"
+LOG_DIR = PROJECT_ROOT / "pipeline" / "logs"
+CONFIG_PATH = PROJECT_ROOT / "pipeline" / "pipeline_config.json"
 
 DEFAULT_CHAR_ORDER = ["玉玉", "柊優花"]
 

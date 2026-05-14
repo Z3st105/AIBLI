@@ -8,8 +8,9 @@
 import os
 import json
 
-BASE = r"D:\AIBLI\audio_synthesis\character_profile"
-VIDEO_BASE = r"D:\AIBLI\video_stitcher\characters"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE = os.path.join(PROJECT_ROOT, "audio_synthesis", "character_profile")
+VIDEO_BASE = os.path.join(PROJECT_ROOT, "video_stitcher", "characters")
 
 # ==================== 角色人设数据 ====================
 

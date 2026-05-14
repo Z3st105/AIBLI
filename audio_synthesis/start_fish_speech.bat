@@ -5,7 +5,7 @@ echo AIBLI Fish Speech TTS 引擎
 echo ========================================
 echo.
 
-cd /d "D:\fish-speech"
+cd /d "%FISH_SPEECH_ROOT%"
 
 echo 启动 Fish Speech WebUI...
 echo 访问地址: http://127.0.0.1:7864

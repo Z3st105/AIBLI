@@ -17,7 +17,7 @@
 ## 目录结构
 
 ```
-D:\AIBLI\video_stitcher\
+video_stitcher/
 ├── src\                         # 源代码
 │   ├── main.py                  # 主入口（命令行）
 │   ├── web_server.py            # Web 服务入口
@@ -53,7 +53,7 @@ D:\AIBLI\video_stitcher\
 
 **前提**：音频合成部门的输出目录结构如下：
 ```
-D:\AIBLI\audio_synthesis\project_output\{project_id}\
+audio_synthesis/project_output/{project_id}/
 ├── merged.wav        # 完整合成音频
 ├── timeline.json     # 时间轴（含 char/start_sec/end_sec/text/lang）
 ├── dialogue_order.txt
@@ -62,7 +62,7 @@ D:\AIBLI\audio_synthesis\project_output\{project_id}\
 
 **命令行方式：**
 ```bash
-python src/main.py --project P001 --source-dir "D:\AIBLI\audio_synthesis\project_output\P001"
+python src/main.py --project P001 --source-dir "../audio_synthesis/project_output/P001"
 ```
 
 **Web 界面方式：**
@@ -114,8 +114,8 @@ characters/
 ```bash
 python src/main.py \
   --project P001 \                      # 项目ID（必填）
-  --source-dir "D:\...\ P001" \         # 前端输出目录（桥梁模式）
-  --output "D:\output\P001.mp4" \       # 输出路径（可选）
+  --source-dir "../audio_synthesis/project_output/P001" \  # 前端输出目录（桥梁模式）
+  --output "./output/P001.mp4" \       # 输出路径（可选）
   --width 1080 --height 1920 \          # 分辨率（不填则自动推断）
   --fps 24 \                            # 帧率（默认24）
   --subtitle-config subtitle_config.json  # 字幕配置（默认项目根目录）

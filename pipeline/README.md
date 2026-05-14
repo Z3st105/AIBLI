@@ -40,7 +40,7 @@
 ## 目录结构
 
 ```
-D:\AIBLI\pipeline\
+pipeline/
 ├── pipeline_orchestrator.py    # 核心调度器
 ├── pipeline_gui.py             # GUI面板
 ├── character_mapper.py         # 角色映射（预留人设接口）

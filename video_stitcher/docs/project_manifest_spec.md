@@ -8,7 +8,7 @@
 ## 文件位置
 
 ```
-D:\AIBLI\audio_synthesis\project_output\{project_id}\
+<audio_synthesis>/project_output/{project_id}/
 ├── project_manifest.json    ← 项目文档（本规范）
 ├── merged.wav               ← 完整合成音频
 ├── timeline.json            ← 时间轴（含字幕文本）
@@ -53,7 +53,7 @@ D:\AIBLI\audio_synthesis\project_output\{project_id}\
     "subtitle_config": "default"
   },
   "output": {
-    "target_dir": "D:\\AIBLI\\video_stitcher\\output",
+    "target_dir": "./output",
     "filename": "P001_项目名称.mp4"
   }
 }

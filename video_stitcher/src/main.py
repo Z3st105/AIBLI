@@ -11,7 +11,7 @@
 
 用法示例:
     python src/main.py --project 111
-    python src/main.py --project 111 --output D:\\output\\final.mp4
+    python src/main.py --project 111 --output ./output/final.mp4
 """
 
 import argparse

@@ -36,11 +36,11 @@ goto end
 :daemon
 echo.
 echo 正在启动守护模式...
-echo 将持续监听: D:\AIBLI\audio_synthesis\project_output
+echo 将持续监听: ..\audio_synthesis\project_output
 echo 每 30 秒扫描一次，发现新项目自动处理
 echo 按 Ctrl+C 停止
 echo.
-python src\pipeline.py --watch-dir "D:\AIBLI\audio_synthesis\project_output" --daemon --interval 30
+python src\pipeline.py --watch-dir "%~dp0..\audio_synthesis\project_output" --daemon --interval 30
 pause
 goto end
 

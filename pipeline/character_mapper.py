@@ -183,7 +183,7 @@ def create_mapper_from_config(config_path: str = "pipeline_config.json") -> Char
     import json as _json
     with open(config_path, "r", encoding="utf-8") as f:
         cfg = _json.load(f)
-    profile_dir = cfg.get("character_mapping", {}).get("profile_dir", "D:\\AIBLI\\audio_synthesis\\character_profile")
+    profile_dir = cfg.get("character_mapping", {}).get("profile_dir", "./audio_synthesis/character_profile")
     return CharacterMapper(profile_dir)
 
 

@@ -440,7 +440,7 @@ HTML_PAGE = """
     <div class="form-row">
       <div class="form-group" style="flex: 2;">
         <label>Frontend Output Dir</label>
-        <input type="text" id="sourceDir" value="D:\\AIBLI\\audio_synthesis\\project_output\\P999_初次合作" placeholder="e.g. D:\\audio_synthesis\\project_output\\P001">
+        <input type="text" id="sourceDir" value="" placeholder="e.g. ../audio_synthesis/project_output/P001">
       </div>
       <div class="form-group">
         <label>Project ID</label>
@@ -479,7 +479,7 @@ HTML_PAGE = """
     <div class="form-row">
       <div class="form-group" style="flex: 2;">
         <label>Watch Directory</label>
-        <input type="text" id="watchDir" value="D:\\AIBLI\\audio_synthesis\\project_output" placeholder="Audio synthesis output root dir">
+        <input type="text" id="watchDir" value="../audio_synthesis/project_output" placeholder="Audio synthesis output root dir">
       </div>
       <div class="form-group" style="flex: 1;">
         <label>&nbsp;</label>

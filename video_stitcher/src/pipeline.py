@@ -9,13 +9,13 @@
 
 用法：
   # 扫描所有项目，自动执行 ready_for_video 状态的项目
-  python src/pipeline.py --watch-dir "D:\AIBLI\audio_synthesis\project_output"
+  python src/pipeline.py --watch-dir "../audio_synthesis/project_output"
 
   # 只处理指定项目
-  python src/pipeline.py --project P001 --watch-dir "D:\AIBLI\audio_synthesis\project_output"
+  python src/pipeline.py --project P001 --watch-dir "../audio_synthesis/project_output"
 
   # 作为守护进程持续监听（每30秒扫描一次）
-  python src/pipeline.py --watch-dir "D:\AIBLI\audio_synthesis\project_output" --daemon --interval 30
+  python src/pipeline.py --watch-dir "../audio_synthesis/project_output" --daemon --interval 30
 """
 
 import argparse

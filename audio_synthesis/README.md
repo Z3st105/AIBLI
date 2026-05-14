@@ -3,7 +3,7 @@
 ## 目录结构
 
 ```
-D:\AIBLI\audio_synthesis\
+audio_synthesis/
 ├── character_profile\          # 角色人设资产
 │   ├── 解说员\                 # 角色文件夹（名字自定义）
 │   │   ├── gpt_weights\        # 放 .ckpt 文件（只放一个，自动选最新的）
@@ -84,8 +84,8 @@ D:\AIBLI\audio_synthesis\
 打开 CMD 或 PowerShell，执行：
 
 ```cmd
-cd /d D:\AIBLI\audio_synthesis
-D:\AI音库\GPT-SoVITS-v2pro-20250604\runtime\python.exe audio_synthesis_pipeline.py --project P111 --script scripts\P111_script.txt
+cd /d <项目路径>\audio_synthesis
+python audio_synthesis_pipeline.py --project P111 --script scripts\P111_script.txt
 ```
 
 **参数说明：**

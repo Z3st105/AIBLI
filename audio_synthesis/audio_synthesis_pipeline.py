@@ -5,7 +5,7 @@
 功能：读取多角色文案 -> 按角色调用 GPT-SoVITS 配音 -> 按顺序输出音频片段 + 序列日志
 
 用法：
-    D:\AI音库\GPT-SoVITS-v2pro-20250604\runtime\python.exe audio_synthesis_pipeline.py \
+    python audio_synthesis_pipeline.py \
         --project P111 \
         --script "project_input/P111_script.txt" \
         --output_dir "project_output"

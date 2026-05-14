@@ -10,8 +10,8 @@
 
 ## 角色人设数据源
 读取以下路径获取所有可用角色的人设信息：
-- `D:\AIBLI\audio_synthesis\character_profile\{角色名}\personality.txt`（性格、声线、出处）
-- `D:\AIBLI\audio_synthesis\character_profile\{角色名}\suitable_roles.txt`（适合配什么类型台词）
+- `audio_synthesis/character_profile/{角色名}/personality.txt`（性格、声线、出处）
+- `audio_synthesis/character_profile/{角色名}/suitable_roles.txt`（适合配什么类型台词）
 
 可用角色列表（15个）：玉玉、柊優花、W、希露菲成年版、希露菲青年版、卡夫卡、洛琪希、洛琪希2、白菜、知更鸟、管理员.B、索尔、艾尔黛拉、认知进化、陈千语
 
@@ -83,11 +83,11 @@
 
 **双通道输出**：
 - 原始文本保存到：`E:\搞怪\{YYYY-MM-DD}\{文件名}.txt`
-- 标准格式同时保存到：`D:\AIBLI\pipeline\queue\pending\{文件名}.txt`
+- 标准格式同时保存到：`pipeline/queue/pending/{文件名}.txt`
 
 **去重规则（防止重复处理）**：
-1. 写入 `D:\AIBLI\pipeline\queue\pending\` 前，先检查该目录是否已有**同名文件**。如果有，说明 pipeline 尚未处理完，**跳过不再重复写入**。
-2. 同时检查 `D:\AIBLI\pipeline\queue\done\` 是否已有同名文件。如果有，说明该内容已处理完毕，**跳过不写入**。
+1. 写入 `pipeline/queue/pending/` 前，先检查该目录是否已有**同名文件**。如果有，说明 pipeline 尚未处理完，**跳过不再重复写入**。
+2. 同时检查 `pipeline/queue/done/` 是否已有同名文件。如果有，说明该内容已处理完毕，**跳过不写入**。
 3. 只有 pending 和 done 都不存在同名文件时，才允许写入。
 4. 报告摘要中标注"跳过了 X 张（重复/已处理）"
 
@@ -102,8 +102,8 @@
 - 角色匹配结果
 
 ### 第八步：触发后端流水线
-1. 检查是否有新生成的文件进入 `D:\AIBLI\pipeline\queue\pending\`
-2. 如果有，启动 pipeline GUI：`python D:\AIBLI\pipeline\pipeline_gui.py`
+1. 检查是否有新生成的文件进入 `pipeline/queue/pending/`
+2. 如果有，启动 pipeline GUI：`python pipeline/pipeline_gui.py`
 3. 如果 GUI 已经在运行（通过进程检查），则不重复启动
 4. GUI 会自动扫描 pending 队列并逐个串行执行（文案→音频→视频）
 

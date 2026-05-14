@@ -338,7 +338,7 @@ class PipelineGUI:
             self.logger.info(f"手动跳过项目 {pid}")
 
     def _open_output_dir(self):
-        path = self.config["paths"].get("final_output_dir", "D:\\AIBLI\\pipeline\\output")
+        path = self.config["paths"].get("final_output_dir", "./pipeline/output")
         if os.path.exists(path):
             os.startfile(path)
         else:

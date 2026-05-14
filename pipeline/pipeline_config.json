@@ -3,14 +3,14 @@
   "version": "1.0.0",
 
   "paths": {
-    "audio_synthesis_base": "D:\\AIBLI\\audio_synthesis",
-    "video_stitcher_base": "D:\\AIBLI\\video_stitcher",
-    "bili_uploader_base": "E:\\BiliAutoUpload",
-    "python_runtime": "D:\\AI音库\\GPT-SoVITS-v2pro-20250604\\runtime\\python.exe",
-    "queue_dir": "D:\\AIBLI\\pipeline\\queue",
-    "projects_dir": "D:\\AIBLI\\pipeline\\projects",
-    "logs_dir": "D:\\AIBLI\\pipeline\\logs",
-    "final_output_dir": "D:\\AIBLI\\pipeline\\output"
+    "audio_synthesis_base": "./audio_synthesis",
+    "video_stitcher_base": "./video_stitcher",
+    "bili_uploader_base": null,
+    "python_runtime": null,
+    "queue_dir": "./pipeline/queue",
+    "projects_dir": "./pipeline/projects",
+    "logs_dir": "./pipeline/logs",
+    "final_output_dir": "./pipeline/output"
   },
 
   "audio_params": {
@@ -36,7 +36,7 @@
 
   "character_mapping": {
     "mode": "sequential",
-    "profile_dir": "D:\\AIBLI\\audio_synthesis\\character_profile",
+    "profile_dir": "./audio_synthesis/character_profile",
     "default_char_order": ["玉玉", "柊優花"],
     "comment": "default_char_order: 按优先级排列的默认角色，对话按出现顺序依次分配"
   },

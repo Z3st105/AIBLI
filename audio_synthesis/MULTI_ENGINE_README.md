@@ -170,7 +170,7 @@ class CharacterVoiceProfile:
 ### Fish Speech 加载失败
 
 检查：
-- `D:\fish-speech\checkpoints\fish-speech-1.5` 目录是否存在
+- `<fish-speech路径>\checkpoints\fish-speech-1.5` 目录是否存在（通过环境变量 `FISH_SPEECH_ROOT` 配置）
 - GPU 是否可用（CUDA）
 - Python 依赖是否安装完整
 

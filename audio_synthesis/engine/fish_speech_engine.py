@@ -14,7 +14,7 @@ from typing import Optional, Generator
 from pathlib import Path
 
 # Fish Speech 项目路径
-FISH_SPEECH_ROOT = r"D:\fish-speech"
+FISH_SPEECH_ROOT = os.environ.get("FISH_SPEECH_ROOT", r"D:\fish-speech")
 
 # 添加 Fish Speech 到 Python 路径
 if FISH_SPEECH_ROOT not in sys.path:
